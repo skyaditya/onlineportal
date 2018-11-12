@@ -3,6 +3,7 @@ package Booking;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,8 +26,10 @@ public class Checkin_out extends JFrame{
 	private JComboBox room;
 	private JComboBox people;
 	private JComboBox outd;
-	private JComboBox inm_1;
-	private JComboBox iny_1;
+	private JComboBox outm;
+	private JComboBox outy;
+	
+	Connection co;
 	
 	/**
 	 * Create the application.
@@ -129,21 +132,21 @@ public class Checkin_out extends JFrame{
 		}
 		frame.getContentPane().add(outd);
 		
-		inm_1 = new JComboBox();
-		inm_1.setBounds(145, 132, 44, 20);
+		outm = new JComboBox();
+		outm.setBounds(145, 132, 44, 20);
 		for(int i=01; i<=12; i++) {
 			String format = String.format("%02d", i);
-			inm_1.addItem(format);
+			outm.addItem(format);
 		}
-		frame.getContentPane().add(inm_1);
+		frame.getContentPane().add(outm);
 		
-		iny_1 = new JComboBox();
-		iny_1.setBounds(208, 132, 62, 20);
+		outy = new JComboBox();
+		outy.setBounds(208, 132, 62, 20);
 		for(int i=2018; i<=2020; i++) {
 			String format = String.format("%02d", i);
-			iny_1.addItem(format);
+			outy.addItem(format);
 		}
-		frame.getContentPane().add(iny_1);
+		frame.getContentPane().add(outy);
 		
 		theHandler h = new theHandler();
 		//textField_User.addActionListener(h);
@@ -163,6 +166,9 @@ public class Checkin_out extends JFrame{
 				p = String.format("%s", e.getActionCommand());
 			}*/
 			if(e.getSource() == btnConfirm) {
+            	String in =iny.getItemAt(iny.getSelectedIndex())+"-"+inm.getItemAt(inm.getSelectedIndex())+"-"+ind.getItemAt(ind.getSelectedIndex());
+            	String out =outy.getItemAt(outy.getSelectedIndex())+"-"+outm.getItemAt(outm.getSelectedIndex())+"-"+outd.getItemAt(outd.getSelectedIndex());
+            	
 				frame.hide();
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
