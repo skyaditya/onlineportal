@@ -16,11 +16,17 @@ import javax.swing.JButton;
 public class Checkin_out extends JFrame{
 
 	public JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 	private JButton btnConfirm;
 	private JButton btnCart;
+	private JComboBox location;
+	private JComboBox ind;
+	private JComboBox inm;
+	private JComboBox iny;
+	private JComboBox room;
+	private JComboBox people;
+	private JComboBox outd;
+	private JComboBox inm_1;
+	private JComboBox iny_1;
 	
 	/**
 	 * Create the application.
@@ -42,54 +48,39 @@ public class Checkin_out extends JFrame{
 		lblNewLabel.setBounds(36, 32, 56, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel("Location");
 		lblNewLabel_1.setBounds(36, 76, 56, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
+		JLabel lblNewLabel_2 = new JLabel("Check In:");
 		lblNewLabel_2.setBounds(36, 105, 56, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
+		JLabel lblNewLabel_3 = new JLabel("Check out:");
 		lblNewLabel_3.setBounds(36, 134, 56, 16);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
+		JLabel lblNewLabel_4 = new JLabel("No of Rooms");
 		lblNewLabel_4.setBounds(36, 163, 56, 16);
 		frame.getContentPane().add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("New label");
+		JLabel lblNewLabel_5 = new JLabel("No. of People");
 		lblNewLabel_5.setBounds(36, 194, 56, 16);
 		frame.getContentPane().add(lblNewLabel_5);
 		
-		textField = new JTextField();
-		textField.setBounds(104, 73, 116, 22);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(104, 102, 116, 22);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(104, 131, 116, 22);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(104, 160, 56, 22);
+		room = new JComboBox();
+		room.setBounds(104, 160, 56, 22);
 		for(int i=0; i<=6; i++) {
-			comboBox.addItem(i);
+			room.addItem(i);
 		}
-		frame.getContentPane().add(comboBox);
+		frame.getContentPane().add(room);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(104, 191, 56, 22);
+		people = new JComboBox();
+		people.setBounds(104, 191, 56, 22);
 		for(int i=0; i<=6; i++) {
-			comboBox_1.addItem(i);
+			people.addItem(i);
 		}
-		frame.getContentPane().add(comboBox_1);
+		frame.getContentPane().add(people);
 		
 		btnConfirm = new JButton("Confirm");
 		btnConfirm.setBounds(36, 253, 97, 25);
@@ -98,6 +89,53 @@ public class Checkin_out extends JFrame{
 		btnCart = new JButton("Cart");
 		btnCart.setBounds(36, 313, 97, 25);
 		frame.getContentPane().add(btnCart);
+		
+		location = new JComboBox();
+		location.setBounds(102, 74, 118, 20);
+		location.addItem("hyderabad");
+		location.addItem("pillani");
+		location.addItem("goa");		
+		frame.getContentPane().add(location);
+		
+		ind = new JComboBox();
+		ind.setBounds(102, 103, 28, 20);
+		for(int i=01; i<=31; i++) {
+			String format = String.format("%02d", i);
+			ind.addItem(format);
+		}
+		frame.getContentPane().add(ind);
+		
+		inm = new JComboBox();
+		inm.setBounds(145, 103, 28, 20);
+		for(int i=01; i<=12; i++) {
+			String format = String.format("%02d", i);
+			inm.addItem(format);
+		}
+		frame.getContentPane().add(inm);
+		
+		iny = new JComboBox();
+		iny.setBounds(183, 103, 28, 20);
+		for(int i=2018; i<=2020; i++) {
+			String format = String.format("%02d", i);
+			iny.addItem(format);
+		}
+		frame.getContentPane().add(iny);
+		
+		outd = new JComboBox();
+		outd.setBounds(102, 132, 28, 20);
+		for(int i=01; i<=31; i++) {
+			String format = String.format("%02d", i);
+			outd.addItem(format);
+		}
+		frame.getContentPane().add(outd);
+		
+		inm_1 = new JComboBox();
+		inm_1.setBounds(145, 132, 28, 20);
+		frame.getContentPane().add(inm_1);
+		
+		iny_1 = new JComboBox();
+		iny_1.setBounds(183, 132, 28, 20);
+		frame.getContentPane().add(iny_1);
 		
 		theHandler h = new theHandler();
 		//textField_User.addActionListener(h);
