@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -38,6 +39,7 @@ public class Reg_1 extends JFrame{
 	private JComboBox comboBox_2;
 
 	Connection co;
+	Connection co2;
 
 	/**
 	 * Create the application.
@@ -187,9 +189,19 @@ public class Reg_1 extends JFrame{
 			            else {
 			            	String date =comboBox_2.getItemAt(comboBox_2.getSelectedIndex())+"-"+comboBox_1.getItemAt(comboBox_1.getSelectedIndex())+"-"+comboBox.getItemAt(comboBox.getSelectedIndex());
 			            	System.out.println(date);
-				            String que2 = "update user_details set name='"+textField.getText()+"' username ='"+textField_4.getText()+"' password= '"+String.valueOf(passwordField_1.getPassword())+"' dob='"+date+"' email='"+textField_3.getText()+"' address='"+textField_2.getText()+"' ;";                                                         
-				            Statement s =st;
-				            ResultSet rs1 = s.executeQuery(que2); 
+				            String que2 = "insert user_details(name,username,password,dob,email,address) values (?,?,?,?,?,?);";                                                         
+							co2 = DBCon.getConnection();
+				            Statement s =co2.createStatement();
+				            PreparedStatement pst = co2.prepareStatement(que2);
+				            pst.setString(1, textField.getText());
+				            pst.setString(2, textField_4.getText());
+				            pst.setString(3, passwordField_1.getText());
+				            pst.setString(4, date);
+				            pst.setString(5, textField_3.getText());
+				            pst.setString(6, textField_2.getText());
+				            
+				            
+				            pst.executeUpdate(); 
 			            }
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
