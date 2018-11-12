@@ -98,7 +98,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(location);
 		
 		ind = new JComboBox();
-		ind.setBounds(102, 103, 28, 20);
+		ind.setBounds(102, 103, 39, 20);
 		for(int i=01; i<=31; i++) {
 			String format = String.format("%02d", i);
 			ind.addItem(format);
@@ -106,7 +106,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(ind);
 		
 		inm = new JComboBox();
-		inm.setBounds(145, 103, 28, 20);
+		inm.setBounds(145, 103, 44, 20);
 		for(int i=01; i<=12; i++) {
 			String format = String.format("%02d", i);
 			inm.addItem(format);
@@ -114,7 +114,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(inm);
 		
 		iny = new JComboBox();
-		iny.setBounds(183, 103, 28, 20);
+		iny.setBounds(208, 103, 62, 20);
 		for(int i=2018; i<=2020; i++) {
 			String format = String.format("%02d", i);
 			iny.addItem(format);
@@ -122,7 +122,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(iny);
 		
 		outd = new JComboBox();
-		outd.setBounds(102, 132, 28, 20);
+		outd.setBounds(102, 132, 39, 20);
 		for(int i=01; i<=31; i++) {
 			String format = String.format("%02d", i);
 			outd.addItem(format);
@@ -130,11 +130,19 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(outd);
 		
 		inm_1 = new JComboBox();
-		inm_1.setBounds(145, 132, 28, 20);
+		inm_1.setBounds(145, 132, 44, 20);
+		for(int i=01; i<=12; i++) {
+			String format = String.format("%02d", i);
+			inm_1.addItem(format);
+		}
 		frame.getContentPane().add(inm_1);
 		
 		iny_1 = new JComboBox();
-		iny_1.setBounds(183, 132, 28, 20);
+		iny_1.setBounds(208, 132, 62, 20);
+		for(int i=2018; i<=2020; i++) {
+			String format = String.format("%02d", i);
+			iny_1.addItem(format);
+		}
 		frame.getContentPane().add(iny_1);
 		
 		theHandler h = new theHandler();
