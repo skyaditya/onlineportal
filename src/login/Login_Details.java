@@ -18,6 +18,7 @@ import java.sql.Statement;
 
 import Booking.Checkin_out;
 import Default.DBCon;
+import java.awt.Color;
 
 public class Login_Details extends JFrame{
 
@@ -39,39 +40,60 @@ public class Login_Details extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 567, 509);
+		frame.getContentPane().setForeground(Color.WHITE);
+		frame.getContentPane().setBackground(Color.RED);
+		frame.setBounds(100, 100, 1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblLogin_Details = new JLabel("OPPO ROOMS");
-		lblLogin_Details.setFont(new Font("GoodPro-CondMedium", Font.BOLD, 48));
-		lblLogin_Details.setBounds(45, 36, 346, 62);
+		JLabel lblLogin_Details = new JLabel("ONLINE HOTEL");
+		lblLogin_Details.setForeground(Color.WHITE);
+		lblLogin_Details.setFont(new Font("Gotham Book", Font.PLAIN, 48));
+		lblLogin_Details.setBounds(78, 184, 394, 72);
 		frame.getContentPane().add(lblLogin_Details);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(45, 151, 56, 16);
+		JLabel lblNewLabel = new JLabel("Username");
+		lblNewLabel.setFont(new Font("Gotham Book", Font.PLAIN, 25));
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBounds(791, 169, 141, 31);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(45, 203, 56, 16);
+		JLabel lblNewLabel_1 = new JLabel("Password");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Gotham Book", Font.PLAIN, 25));
+		lblNewLabel_1.setBounds(791, 208, 129, 38);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		textField_User = new JTextField();
-		textField_User.setBounds(123, 148, 116, 22);
+		textField_User.setBounds(944, 169, 204, 28);
 		frame.getContentPane().add(textField_User);
 		textField_User.setColumns(10);
 		
 		passwordField_UPassword = new JPasswordField();
-		passwordField_UPassword.setBounds(123, 200, 116, 19);
+		passwordField_UPassword.setBounds(944, 217, 206, 25);
 		frame.getContentPane().add(passwordField_UPassword);
 		
 		btnLogin = new JButton("Login");
-		btnLogin.setBounds(45, 248, 97, 25);
+		btnLogin.setForeground(Color.GRAY);
+		btnLogin.setBackground(Color.DARK_GRAY);
+		btnLogin.setBounds(947, 287, 97, 25);
 		frame.getContentPane().add(btnLogin);
 		
 		btnSign_Up = new JButton("Sign UP");
-		btnSign_Up.setBounds(45, 299, 97, 22);
+		btnSign_Up.setBounds(947, 342, 97, 22);
 		frame.getContentPane().add(btnSign_Up);
+		
+		JLabel lblBookingPortal = new JLabel("BOOKING PORTAL");
+		lblBookingPortal.setForeground(Color.WHITE);
+		lblBookingPortal.setFont(new Font("Gotham Book", Font.PLAIN, 48));
+		lblBookingPortal.setBounds(77, 243, 477, 72);
+		frame.getContentPane().add(lblBookingPortal);
+		
+		JLabel lblWelcomeTo = new JLabel("Welcome, to");
+		lblWelcomeTo.setForeground(Color.WHITE);
+		lblWelcomeTo.setFont(new Font("Gotham Book", Font.PLAIN, 40));
+		lblWelcomeTo.setBounds(78, 128, 269, 72);
+		frame.getContentPane().add(lblWelcomeTo);
 	
 		theHandler h = new theHandler();
 		textField_User.addActionListener(h);
@@ -141,5 +163,4 @@ public class Login_Details extends JFrame{
 		}
 
 	}
-	
 }
