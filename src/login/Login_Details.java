@@ -83,6 +83,7 @@ public class Login_Details extends JFrame{
 		btnSign_Up.setBounds(947, 342, 97, 22);
 		frame.getContentPane().add(btnSign_Up);
 		
+<<<<<<< HEAD
 		JLabel lblBookingPortal = new JLabel("BOOKING PORTAL");
 		lblBookingPortal.setForeground(Color.WHITE);
 		lblBookingPortal.setFont(new Font("Gotham Book", Font.PLAIN, 48));
@@ -94,6 +95,12 @@ public class Login_Details extends JFrame{
 		lblWelcomeTo.setFont(new Font("Gotham Book", Font.PLAIN, 40));
 		lblWelcomeTo.setBounds(78, 128, 269, 72);
 		frame.getContentPane().add(lblWelcomeTo);
+=======
+		JLabel background = new JLabel("");
+		background.setBounds(10, 11, 531, 448);
+		background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/download.jpg")));
+		frame.getContentPane().add(background);
+>>>>>>> 7c3f0b47b22ce2292980b935c818fa6aa7b9b4bc
 	
 		theHandler h = new theHandler();
 		textField_User.addActionListener(h);
@@ -138,7 +145,7 @@ public class Login_Details extends JFrame{
 		               rs_passwrd=rs.getString("password");
 		           }
 		             System.out.println("connection passed");
-		             if (u.equals(rs_name) && p.equals(rs_passwrd)) {
+		             if (u.equals(rs_name) && p.equals(rs_passwrd) && !u.equals("") && !p.equals("")) {
 		            	 frame.hide();
 							EventQueue.invokeLater(new Runnable() {
 								public void run() {
