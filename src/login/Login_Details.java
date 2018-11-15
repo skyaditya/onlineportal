@@ -82,8 +82,9 @@ public class Login_Details extends JFrame{
 		
 		btnLogin = new JButton("Log In");
 		btnLogin.setFont(new Font("Gotham Bold", Font.PLAIN, 20));
-		btnLogin.setForeground(Color.BLACK);
-		btnLogin.setBackground(Color.WHITE);
+		btnLogin.setOpaque(false);
+		btnLogin.setContentAreaFilled(false);
+		btnLogin.setBorderPainted(false);
 		btnLogin.setBounds(1035, 273, 113, 42);
 		frame.getContentPane().add(btnLogin);
 		
@@ -113,7 +114,7 @@ public class Login_Details extends JFrame{
 		frame.getContentPane().add(lblNewUser);
 		
 		JLabel label = new JLabel("");
-		Image img = new ImageIcon(frame.getClass().getResource("/Hotel-PNG-Picture.png")).getImage();
+		Image img = new ImageIcon(frame.getClass().getResource("/Images/Hotel-PNG-Picture.png")).getImage();
 		label.setIcon(new ImageIcon(img));
 		label.setBounds(136, 308, 450, 352);
 		frame.getContentPane().add(label);
