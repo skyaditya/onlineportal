@@ -115,7 +115,7 @@ public class Reg_1 extends JFrame{
 		textField.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(200, 284, 401, 128);
+		textField_2.setBounds(200, 276, 401, 128);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
