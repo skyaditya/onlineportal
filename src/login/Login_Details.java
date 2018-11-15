@@ -83,8 +83,9 @@ public class Login_Details extends JFrame{
 		
 		btnLogin = new JButton("Log In");
 		btnLogin.setFont(new Font("Gotham Bold", Font.PLAIN, 20));
-		btnLogin.setForeground(Color.BLACK);
-		btnLogin.setBackground(Color.WHITE);
+		btnLogin.setOpaque(false);
+		btnLogin.setContentAreaFilled(false);
+		btnLogin.setBorderPainted(false);
 		btnLogin.setBounds(1035, 273, 113, 42);
 		frame.getContentPane().add(btnLogin);
 		
@@ -113,11 +114,19 @@ public class Login_Details extends JFrame{
 		lblNewUser.setBounds(930, 379, 121, 31);
 		frame.getContentPane().add(lblNewUser);
 		
+<<<<<<< HEAD
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.RED);
 		panel.setBounds(0, 0, 445, 87);
 		frame.getContentPane().add(panel);
 		Image img = new ImageIcon(frame.getClass().getResource("/Images/Hotel-PNG-Picture.png")).getImage();
+=======
+		JLabel label = new JLabel("");
+		Image img = new ImageIcon(frame.getClass().getResource("/Images/Hotel-PNG-Picture.png")).getImage();
+		label.setIcon(new ImageIcon(img));
+		label.setBounds(136, 308, 450, 352);
+		frame.getContentPane().add(label);
+>>>>>>> 88d4039c51772d4ebf8efe124eb95c49b4ddf861
 		
 	
 		theHandler h = new theHandler();
