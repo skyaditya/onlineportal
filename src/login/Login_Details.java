@@ -6,8 +6,11 @@ import javax.swing.JOptionPane;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +22,9 @@ import java.sql.Statement;
 import Booking.Checkin_out;
 import Default.DBCon;
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
 
 public class Login_Details extends JFrame{
 
@@ -40,8 +46,9 @@ public class Login_Details extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setBackground(Color.WHITE);
 		frame.getContentPane().setForeground(Color.WHITE);
-		frame.getContentPane().setBackground(Color.RED);
+		frame.getContentPane().setBackground(new Color(100, 149, 237));
 		frame.setBounds(100, 100, 1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -53,37 +60,40 @@ public class Login_Details extends JFrame{
 		frame.getContentPane().add(lblLogin_Details);
 		
 		JLabel lblNewLabel = new JLabel("Username");
-		lblNewLabel.setFont(new Font("Gotham Book", Font.PLAIN, 25));
+		lblNewLabel.setFont(new Font("GoodPro-Book", Font.PLAIN, 25));
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(791, 169, 141, 31);
+		lblNewLabel.setBounds(817, 169, 113, 31);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Password");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Gotham Book", Font.PLAIN, 25));
-		lblNewLabel_1.setBounds(791, 208, 129, 38);
+		lblNewLabel_1.setFont(new Font("GoodPro-Book", Font.PLAIN, 25));
+		lblNewLabel_1.setBounds(817, 213, 113, 38);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		textField_User = new JTextField();
-		textField_User.setBounds(944, 169, 204, 28);
+		textField_User.setBounds(942, 169, 206, 31);
 		frame.getContentPane().add(textField_User);
 		textField_User.setColumns(10);
 		
 		passwordField_UPassword = new JPasswordField();
-		passwordField_UPassword.setBounds(944, 217, 206, 25);
+		passwordField_UPassword.setBounds(942, 214, 206, 31);
 		frame.getContentPane().add(passwordField_UPassword);
 		
-		btnLogin = new JButton("Login");
-		btnLogin.setForeground(Color.GRAY);
-		btnLogin.setBackground(Color.DARK_GRAY);
-		btnLogin.setBounds(947, 287, 97, 25);
+		btnLogin = new JButton("Log In");
+		btnLogin.setFont(new Font("Gotham Bold", Font.PLAIN, 20));
+		btnLogin.setForeground(Color.BLACK);
+		btnLogin.setBackground(Color.WHITE);
+		btnLogin.setBounds(1035, 273, 113, 42);
 		frame.getContentPane().add(btnLogin);
 		
-		btnSign_Up = new JButton("Sign UP");
-		btnSign_Up.setBounds(947, 342, 97, 22);
+		btnSign_Up = new JButton("Sign Up");
+		btnSign_Up.setBackground(Color.WHITE);
+		btnSign_Up.setForeground(Color.DARK_GRAY);
+		btnSign_Up.setFont(new Font("Gotham Bold", Font.PLAIN, 20));
+		btnSign_Up.setBounds(1035, 373, 113, 42);
 		frame.getContentPane().add(btnSign_Up);
 		
-<<<<<<< HEAD
 		JLabel lblBookingPortal = new JLabel("BOOKING PORTAL");
 		lblBookingPortal.setForeground(Color.WHITE);
 		lblBookingPortal.setFont(new Font("Gotham Book", Font.PLAIN, 48));
@@ -95,12 +105,13 @@ public class Login_Details extends JFrame{
 		lblWelcomeTo.setFont(new Font("Gotham Book", Font.PLAIN, 40));
 		lblWelcomeTo.setBounds(78, 128, 269, 72);
 		frame.getContentPane().add(lblWelcomeTo);
-=======
-		JLabel background = new JLabel("");
-		background.setBounds(10, 11, 531, 448);
-		background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/download.jpg")));
-		frame.getContentPane().add(background);
->>>>>>> 7c3f0b47b22ce2292980b935c818fa6aa7b9b4bc
+		
+		JLabel lblNewUser = new JLabel("New User?");
+		lblNewUser.setForeground(Color.WHITE);
+		lblNewUser.setFont(new Font("GoodPro-Book", Font.PLAIN, 20));
+		lblNewUser.setBounds(942, 379, 121, 31);
+		frame.getContentPane().add(lblNewUser);
+		
 	
 		theHandler h = new theHandler();
 		textField_User.addActionListener(h);
@@ -145,7 +156,7 @@ public class Login_Details extends JFrame{
 		               rs_passwrd=rs.getString("password");
 		           }
 		             System.out.println("connection passed");
-		             if (u.equals(rs_name) && p.equals(rs_passwrd) && !u.equals("") && !p.equals("")) {
+		             if (u.equals(rs_name) && p.equals(rs_passwrd)) {
 		            	 frame.hide();
 							EventQueue.invokeLater(new Runnable() {
 								public void run() {

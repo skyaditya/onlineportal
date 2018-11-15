@@ -13,6 +13,8 @@ import login.Login_Details;
 
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Checkin_out extends JFrame{
 
@@ -43,65 +45,77 @@ public class Checkin_out extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(248, 248, 255));
 		frame.setBounds(100, 100, 1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(36, 32, 56, 16);
+		JLabel lblNewLabel = new JLabel("Booking Details");
+		lblNewLabel.setForeground(Color.DARK_GRAY);
+		lblNewLabel.setFont(new Font("Gotham Bold", Font.BOLD, 40));
+		lblNewLabel.setBounds(38, 41, 335, 41);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Location");
-		lblNewLabel_1.setBounds(36, 76, 56, 16);
+		lblNewLabel_1.setFont(new Font("GoodPro-Book", Font.PLAIN, 30));
+		lblNewLabel_1.setBounds(38, 136, 122, 30);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Check In:");
-		lblNewLabel_2.setBounds(36, 105, 56, 16);
+		JLabel lblNewLabel_2 = new JLabel("Check In Date");
+		lblNewLabel_2.setFont(new Font("GoodPro-Book", Font.PLAIN, 30));
+		lblNewLabel_2.setBounds(38, 192, 178, 30);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Check out:");
-		lblNewLabel_3.setBounds(36, 134, 56, 16);
+		JLabel lblNewLabel_3 = new JLabel("Check out Date");
+		lblNewLabel_3.setFont(new Font("GoodPro-Book", Font.PLAIN, 30));
+		lblNewLabel_3.setBounds(38, 245, 190, 30);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("No of Rooms");
-		lblNewLabel_4.setBounds(36, 163, 56, 16);
+		JLabel lblNewLabel_4 = new JLabel("No. of Rooms");
+		lblNewLabel_4.setFont(new Font("GoodPro-Book", Font.PLAIN, 30));
+		lblNewLabel_4.setBounds(38, 301, 178, 30);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("No. of People");
-		lblNewLabel_5.setBounds(36, 194, 56, 16);
+		lblNewLabel_5.setFont(new Font("GoodPro-Book", Font.PLAIN, 30));
+		lblNewLabel_5.setBounds(38, 352, 165, 30);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		room = new JComboBox();
-		room.setBounds(104, 160, 56, 22);
+		room.setBounds(236, 301, 70, 30);
 		for(int i=0; i<=6; i++) {
 			room.addItem(i);
 		}
 		frame.getContentPane().add(room);
 		
 		people = new JComboBox();
-		people.setBounds(104, 191, 56, 22);
+		people.setBounds(236, 352, 70, 30);
 		for(int i=0; i<=6; i++) {
 			people.addItem(i);
 		}
 		frame.getContentPane().add(people);
 		
 		btnConfirm = new JButton("Confirm");
-		btnConfirm.setBounds(36, 253, 97, 25);
+		btnConfirm.setFont(new Font("Gotham Bold", Font.BOLD, 25));
+		btnConfirm.setBounds(38, 429, 141, 41);
 		frame.getContentPane().add(btnConfirm);
 		
 		btnCart = new JButton("Cart");
-		btnCart.setBounds(36, 313, 97, 25);
+		btnCart.setBackground(Color.LIGHT_GRAY);
+		btnCart.setFont(new Font("Gotham Bold", Font.PLAIN, 25));
+		btnCart.setBounds(1049, 586, 141, 41);
 		frame.getContentPane().add(btnCart);
 		
 		location = new JComboBox();
-		location.setBounds(102, 74, 118, 20);
+		location.setBackground(Color.LIGHT_GRAY);
+		location.setBounds(164, 136, 282, 30);
 		location.addItem("hyderabad");
 		location.addItem("pillani");
 		location.addItem("goa");		
 		frame.getContentPane().add(location);
 		
 		ind = new JComboBox();
-		ind.setBounds(102, 103, 39, 20);
+		ind.setBounds(236, 192, 62, 29);
 		for(int i=01; i<=31; i++) {
 			String format = String.format("%02d", i);
 			ind.addItem(format);
@@ -109,7 +123,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(ind);
 		
 		inm = new JComboBox();
-		inm.setBounds(145, 103, 44, 20);
+		inm.setBounds(310, 192, 56, 29);
 		for(int i=01; i<=12; i++) {
 			String format = String.format("%02d", i);
 			inm.addItem(format);
@@ -117,7 +131,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(inm);
 		
 		iny = new JComboBox();
-		iny.setBounds(208, 103, 62, 20);
+		iny.setBounds(378, 192, 68, 29);
 		for(int i=2018; i<=2020; i++) {
 			String format = String.format("%02d", i);
 			iny.addItem(format);
@@ -125,7 +139,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(iny);
 		
 		outd = new JComboBox();
-		outd.setBounds(102, 132, 39, 20);
+		outd.setBounds(236, 245, 62, 29);
 		for(int i=01; i<=31; i++) {
 			String format = String.format("%02d", i);
 			outd.addItem(format);
@@ -133,7 +147,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(outd);
 		
 		outm = new JComboBox();
-		outm.setBounds(145, 132, 44, 20);
+		outm.setBounds(310, 245, 56, 29);
 		for(int i=01; i<=12; i++) {
 			String format = String.format("%02d", i);
 			outm.addItem(format);
@@ -141,7 +155,7 @@ public class Checkin_out extends JFrame{
 		frame.getContentPane().add(outm);
 		
 		outy = new JComboBox();
-		outy.setBounds(208, 132, 62, 20);
+		outy.setBounds(378, 245, 68, 29);
 		for(int i=2018; i<=2020; i++) {
 			String format = String.format("%02d", i);
 			outy.addItem(format);
