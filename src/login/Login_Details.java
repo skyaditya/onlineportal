@@ -109,8 +109,14 @@ public class Login_Details extends JFrame{
 		JLabel lblNewUser = new JLabel("New User?");
 		lblNewUser.setForeground(Color.WHITE);
 		lblNewUser.setFont(new Font("GoodPro-Book", Font.PLAIN, 20));
-		lblNewUser.setBounds(942, 379, 121, 31);
+		lblNewUser.setBounds(930, 379, 121, 31);
 		frame.getContentPane().add(lblNewUser);
+		
+		JLabel label = new JLabel("");
+		Image img = new ImageIcon(frame.getClass().getResource("/Hotel-PNG-Picture.png")).getImage();
+		label.setIcon(new ImageIcon(img));
+		label.setBounds(136, 308, 450, 352);
+		frame.getContentPane().add(label);
 		
 	
 		theHandler h = new theHandler();
